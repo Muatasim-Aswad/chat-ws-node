@@ -12,7 +12,6 @@
     "types": ["node"],
     "allowImportingTsExtensions": false,
     "noEmit": false,
-    "outDir": "./dist",
     "removeComments": true
   },
   "ts-node": {

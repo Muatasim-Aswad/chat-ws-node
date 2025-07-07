@@ -6,10 +6,8 @@
   "main": "server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:client": "tsc public/index.ts --target ES2022 --module ES2022 --lib DOM,ES2022 --skipLibCheck",
-    "build:server": "tsc server.ts --target ES2022 --module ES2022 --lib ES2022,DOM --skipLibCheck",
-    "build": "npm run build:client && npm run build:server",
-    "dev": "npm run build:client && tsx watch server.ts",
+    "build": "tsc",
+    "dev": "npm run build && tsx watch server.ts",
     "start": "node server.js"
   },
   "author": "",
