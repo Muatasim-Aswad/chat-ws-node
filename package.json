@@ -2,19 +2,25 @@
   "name": "websockets-chat-room",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "type": "module",
+  "main": "server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "build:client": "tsc public/index.ts --target ES2022 --module ES2022 --lib DOM,ES2022 --skipLibCheck",
+    "build:server": "tsc server.ts --target ES2022 --module ES2022 --lib ES2022,DOM --skipLibCheck",
+    "build": "npm run build:client && npm run build:server",
+    "dev": "npm run build:client && tsx watch server.ts",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ws": "^7.5.3"
+    "ws": "^8.14.2"
   },
   "devDependencies": {
-    "eslint": "^7.31.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.23.4"
+    "@types/node": "^20.8.0",
+    "@types/ws": "^8.5.6",
+    "tsx": "^4.7.1",
+    "typescript": "^5.2.2"
   }
 }
